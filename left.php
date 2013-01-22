@@ -1,5 +1,5 @@
 <?
-//$o_id = $_SESSION['o_id']; //Anon Add Code 16-01-2013 
+$o_id = $_SESSION['o_id']; //Anon Add Code 16-01-2013 
 $cate_global = "";
 $cate_global2 = "";
 function Recall($id){
