@@ -187,7 +187,7 @@ $(document).ready(function(){
             //$list_sql = "SELECT *  FROM ".$prefix."_products WHERE `products_id` IN ( SELECT DISTINCT products_id FROM ".$prefix."_productdiscount)";
             //$list_sql .= " WHERE ( ( date_start='0000-00-00' OR date_start < NOW() ) AND ( date_end='000-00-00' OR date_end > NOW() ) )";
             $list_sql = "SELECT * FROM jenbunjerd_products WHERE `products_id` IN ( SELECT DISTINCT products_id FROM jenbunjerd_productdiscount WHERE ( ( date_start='0000-00-00' OR date_start < NOW() ) AND ( date_end='000-00-00' OR date_end > NOW() ) ) ORDER BY date_start DESC )";
-            echo($list_sql);
+            //echo($list_sql);
             //$list_query = "SELECT * FROM jenbunjerd_products WHERE (products_promotion = 1 AND products_discountprice > 0) AND products_status =1 AND products_promote = 1 AND ((promotion_start_date = '0000-00-00' OR promotion_start_date < NOW()) AND (promotion_end_date = '0000-00-00' OR promotion_end_date > NOW()))";
             $list_query = $db->sql_query($list_sql);
             if(!$list_query){
@@ -252,9 +252,9 @@ $(document).ready(function(){
 			$products_rollers=stripslashes($result['products_rollers']);
 			$products_material=stripslashes($result['products_material']);
 			$products_qtypack=stripslashes($result['products_qtypack']);
-			echo $products_id;
-            echo $products_price = getPrice($products_id);
-            echo $products_discountprice = getDiscountPrice($products_id);
+            $products_id;
+            $products_price = getPrice($products_id);
+            $products_discountprice = getDiscountPrice($products_id);
             //$products_price=stripslashes($result['products_price']);
 			//$products_discountprice=stripslashes($result['products_discountprice']);
 			$promotion_start_date=$result['promotion_start_date'];
