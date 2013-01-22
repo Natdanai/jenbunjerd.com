@@ -1,0 +1,11 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+    RewriteCond %{HTTP_HOST} ^jenbunjerd.com [NC]
+    RewriteRule ^(.*)$ http://www.jenbunjerd.com/$1 [L,R=301]
+ </IfModule>
+ErrorDocument 404 /errorpage/404.php
+ErrorDocument 500 /errorpage/500.php
+# BEGIN WordPress
+
+# END WordPress
