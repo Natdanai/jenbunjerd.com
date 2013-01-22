@@ -241,7 +241,7 @@ function Recall2($id){
 							<?
 								$cart_sql = sql_Select(1, $prefix."_order_b", "order_id = '$o_id'", 0);
                                 
-								echo  $cart_sql ;
+								//echo  $cart_sql ;
 								$cart_query = $db->sql_query($cart_sql);										
 								$total_item = $db->sql_numrows($cart_query);
 								
