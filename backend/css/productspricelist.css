@@ -1,0 +1,147 @@
+@charset "utf-8";
+.list{
+    border-collapse: collapse;
+    width: 100%;
+    border-top: 1px solid #DDD;
+    border-left: 1px solid #DDD;
+    margin-bottom: 20px;
+}
+.list .left {
+text-align: left;
+padding: 7px;
+}
+.list thead td a, .list thead td {
+text-decoration: none;
+color: #222;
+font-weight: bold;
+}
+.list thead td {
+background-color: #AFAFAF;
+padding: 0px 5px;
+}
+.list td {
+border-right: 1px solid #DDD;
+border-bottom: 1px solid #DDD;
+}
+
+
+
+
+
+#form_price				{ width:600px; margin:0 auto; height:200px; padding:10px 0;
+												background: transparent url(../images/form_bg3.png) no-repeat;
+                        position:relative; }
+form fieldset					{ font-family:Verdana, Arial, Helvetica, sans-serif; font-size:1.2em;
+												margin:0px 0px 20px 0px; width:578px; position:relative;
+												border:0;display:block; padding: 0px 10px 8px; }
+form fieldset legend	{ border-width:1px; border-style:solid; border-color:#BBBB66; color:#3D7169;
+												font-weight:bold; font-variant:small-caps; font-size:140%; padding:4px 8px;
+												margin:0px 0px 10px 0px; position:relative; top: -12px; background:white; }
+label									{ font-size:60%; display:block; float:left; width:10em; text-align:right;
+												margin:.2em .2em 0 0; color:#ffd; font-weight:bold;padding:8px 0px; }
+/*span.error           { font-weight:normal;color:red;text-align:left;width:140px; padding-left:25px; */
+span.error              {position: absolute; top: 45px; left: 330px;font-weight:normal;color:#fcf177;}
+span.success              {position: absolute; top: 45px; left: 330px;font-weight:normal;color:#f9d59d;}
+                        
+input.text-input			{ margin:4px;padding:2px 0;color:#333; }
+
+
+input.submit					{ position:absolute; top:135px; left:150px; padding:3px 6px;
+                        border:2px solid #fff; margin:20px 0px 0px 0px; color:#3D7169; 
+												font-family:Verdana, Arial, Helvetica, sans-serif;
+												background:#CCC; -moz-border-radius:5px; }
+
+input.submit:hover		{ background:#009FAA none repeat scroll 0% 0%; color:white; }
+#message							{ width:180px;margin:60px 0 0 100px; }
+#message h2						{ font-size:150%;color:white; }
+#message p						{ color:white;font-weight:bold;margin:6px 0px; }
+#checkmark						{ position:relative;top:-46px;left:-60px; }
+
+
+/** **/
+label#products_id_label      { position:absolute; top:0; left:0; }
+input#products_id            { position:absolute; top:0; left:150px; }
+
+label#products_jb_no_label      { position:absolute; top:0; left:0; }
+input#products_jb_no            { position:absolute; top:0; left:150px; }
+
+
+label#products_price_lable     { position:absolute; top:35px; left:0px; }
+input#products_price           { position:absolute; top:35px; left:150px; }
+input#products_discountprice          { position:absolute; top:35px; left:150px; }
+
+
+label#date_end_label     { position:absolute; top:105px; left:0px; }
+input.date_end          { position:absolute; top:105px; left:150px; }
+input.discount_date_end         { position:absolute; top:105px; left:150px; }
+
+
+label#date_start_label    { position:absolute; top:70px; left:0px; }
+input.date_start           { position:absolute; top:70px; left:150px; }
+input.discount_date_start          { position:absolute; top:70px; left:150px; }
+
+
+
+#product-pricelist {
+	width: 700px;
+	padding: 0;
+	margin: 0;
+    border: 1px;
+}
+
+#product-pricelist th {
+	font: bold 11px "Trebuchet MS", Verdana, Arial, Helvetica,
+	sans-serif;
+	color: #6D929B;
+	border-right: 1px solid #C1DAD7;
+	border-bottom: 1px solid #C1DAD7;
+	border-top: 1px solid #C1DAD7;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	text-align: left;
+	padding: 6px 6px 6px 12px;
+	background: #CAE8EA url("../imgs/table-price/bg_header.jpg") no-repeat;
+}
+
+#product-pricelist th.spec {	
+	border-left: 1px solid #C1DAD7;
+	border-top: 0;
+	background: #fff url("../imgs/table-price/bullet1.gif") no-repeat;
+	font: bold 10px "Trebuchet MS", Verdana, Arial, Helvetica,
+	sans-serif;
+}
+
+#product-pricelist th.specalt {
+	border-left: 1px solid #C1DAD7;
+	border-top: 0;
+	background: #f5fafa url("../imgs/table-price/bullet2.gif") no-repeat;
+	font: bold 10px "Trebuchet MS", Verdana, Arial, Helvetica,
+	sans-serif;
+	color: #B4AA9D;
+}
+
+#product-pricelist td {
+	border-right: 1px solid #C1DAD7;
+	border-bottom: 1px solid #C1DAD7;
+	background: #fff;
+	padding: 6px 6px 6px 12px;
+	color: #6D929B;
+}
+
+
+#product-pricelist td.alt {
+	background: #F5FAFA;
+	color: #B4AA9D;
+}
+#product-pricelist td.del a{
+    color: red;
+}
+
+/* Discount Form */
+
+#discount-price					{ width:600px; margin:0 auto; height:200px; padding:10px 0;
+												background: transparent url("../images/discount-form-bg2.png")  no-repeat; 
+                                position:relative; }
+
+/*End */
+

@@ -1,4 +1,4 @@
- <link rel="stylesheet" href="colorpicker/css/colorpicker.css" type="text/css" />
+<!--  <link rel="stylesheet" href="colorpicker/css/colorpicker.css" type="text/css" />
 
 	<script type="text/javascript" src="colorpicker/js/jquery.js"></script>
 	<script type="text/javascript" src="colorpicker/js/colorpicker.js"></script>
@@ -6,7 +6,8 @@
     <script type="text/javascript" src="colorpicker/js/eye.js"></script>
     <script type="text/javascript" src="colorpicker/js/layout.js?ver=1.0.2"></script>
     <script language="javascript" src="JS.js"></script>
-<link href="product_detail.css" rel="stylesheet" type="text/css">
+<link href="product_detail.css" rel="stylesheet" type="text/css"> -->
+
 <?php
 include("../js_v2/fckeditor.php") ;
 $fcke_width = 700;
@@ -2430,15 +2431,29 @@ function checkvalues()
 -->
 </script>
 <form name="form1" method="post" enctype="multipart/form-data">
+
  <!-- Start Tab -->
- <div id="tabs"></div>
-  <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
-    <tr>
-      <td><table width="100%" height="1672" border="0" cellpadding="5" cellspacing="0" align="center"  class="Type_A">
-          <tr class="head_noline">
-            <td height="25" colspan="2">&nbsp;&nbsp;<B>Modify Products</B> <font size="1" color="red"> &nbsp;&nbsp;[ **** Please use single quote(') replace double quote(") ]</font></td>
-          </tr>
+ <div id="tabs"> 
+ <h3>Modufy Products</h3> <span><font size="1" color="red"> &nbsp;&nbsp;[ **** Please use single quote(') replace double quote(") ]</font></span>  
+    
+  <div id="menu-topleft">
+  <input type="button"  value="    OK    " onMouseOver="onBtnOver(this,'<?=$theme_tab1?>')";  onMouseOut="onBtnOut(this)" onclick="javascript:checkvalues();" />
+ <input name="reset" type="reset" id="reset" value="  Reset  " onMouseOver="onBtnOver(this,'<?=$theme_tab1?>')";  onMouseOut="onBtnOut(this)" />     
+  </div> 
+  
+  
+  <ul>
+    <li><a href="#tabs-1">General</a></li>
+    <li><a href="#tabs-2">Data</a></li>
+    <li><a href="#tabs-3">Price List</a></li>
+    <li><a href="#tabs-4">Discount List</a></li>
+  </ul>
+  <div id="tabs-1">
+    <p>A</p>
+    <!-- A1 -->
+    <table width="100%" >
           <tr>
+          
             <td height="26" class="td_desc"><?=$arr_product_fieldname[13] ?>
               &nbsp;&nbsp;:&nbsp;&nbsp;</td>
             <td><font size="-2" face="MS Sans Serif, Tahoma, sans-serif">
@@ -2682,26 +2697,9 @@ function checkvalues()
             <td><input name="qtypack" type="text"  size="100" value="<?=$products_qtypack?>">
               &nbsp; </td>
           </tr>
-          <tr>
-            <td height="26" class="td_desc">กำหนดวันแสดงราคา &nbsp;<font color=red>**</font>
-              : &nbsp;</td>
-            <td><input type="text" id="datepicker" name='promotion_start_date' value="<?=$promotion_start_date?>"/></p></td>
+          
             
-          </tr>
-          <tr>
-            <td height="26" class="td_desc">วันสิ้นสุดแสดงราคา &nbsp;<font color=red>**</font>
-              : &nbsp;</td>
-              <td><input type="text" id="datepicker2" name='promotion_end_date' value="<?=$promotion_end_date?>"/></p></td>
-            
-          </tr>
-          <tr>
-            <td height="26" class="td_desc"><?=$arr_product_fieldname[36] ?>
-              &nbsp;<font color=red>**</font>
-              : &nbsp;</td>
-            <td><input name="price" type="text"  size="24" value="<?=$products_price?>">
-              &nbsp; </td>
-          </tr>
-          <tr>
+          <!-- <tr>
             <td height="26" class="td_desc"><?=$arr_product_fieldname[37] ?>
               &nbsp;&nbsp;:&nbsp;&nbsp;<font color=red>**</font></td>
             <td><input name="discountprice" type="text"  size="24" value="<?=$products_discountprice?>">
@@ -2711,8 +2709,43 @@ function checkvalues()
                 <option value="2" <?php if ($products_promotion ==2) echo 'selected="selected"';?>>Spacial Price</option>
                 
               </select><font color=red>**</font></td>
+          </tr> -->
+          
+          
+        </table>
+    <!-- End -->
+  </div>
+  <div id="tabs-2">
+    <p>B</p>
+    <table style="width: auto;">
+    
+    <tr>
+            <td height="26" class="td_desc">Keyword : </td>
+            <td><input name="keyword" type="text" id="keyword" value="<? echo $products_keyword; ?>" size="40" />
+            </td>
           </tr>
           <tr>
+            <td height="26" class="td_desc"><?=$arr_product_fieldname[41] ?>
+              &nbsp;&nbsp;:&nbsp;&nbsp;<font color=red>**</font> </td>
+            <td><select name="active">
+                <option value="1" <?php if ($products_status ==1) echo 'selected="selected"';?>>Online</option>
+                <option value="2" <?php if ($products_status ==2) echo 'selected="selected"';?>>Thai</option>
+                <option value="3" <?php if ($products_status ==3) echo 'selected="selected"';?>>Eng</option>
+                <option value="4" <?php if ($products_status ==4) echo 'selected="selected"';?>>Offline</option>
+              </select></td>
+          </tr>
+          <tr>
+            <td height="26" class="td_desc"><?=$arr_product_fieldname[45] ?>
+              : &nbsp; <font color=red>**</font></td>
+            <td><select name="promote">
+                <option value="1" <?php if ($products_promote ==1) echo 'selected="selected"';?>>Online</option>
+                <option value="2" <?php if ($products_promote ==2) echo 'selected="selected"';?>>Thai</option>
+                <option value="3" <?php if ($products_promote ==3) echo 'selected="selected"';?>>Eng</option>
+                <option value="4" <?php if ($products_promote ==4) echo 'selected="selected"';?>>Offline</option>
+              </select></td>
+          </tr>
+    
+    <tr>
             <td height="26" class="td_desc"><?=$arr_product_fieldname[46] ?>
               &nbsp;&nbsp;:&nbsp;&nbsp;</td>
             <td><textarea name="p_detail_th" rows="5"  cols="100"><?=$products_detail_th?>
@@ -3844,50 +3877,48 @@ while ($categories= $db->sql_fetchrow($detail_query)){
             <td><input name="remark" type="text" id="remark" value="<? echo $products_remark; ?>" size="40" />
             </td>
           </tr>
-          <tr>
-            <td height="26" class="td_desc">Keyword : </td>
-            <td><input name="keyword" type="text" id="keyword" value="<? echo $products_keyword; ?>" size="40" />
-            </td>
+          
+          
+          
+            <td height="10">&nbsp;</td>
+            <td>&nbsp;</td>
           </tr>
-          <tr>
-            <td height="26" class="td_desc"><?=$arr_product_fieldname[41] ?>
-              &nbsp;&nbsp;:&nbsp;&nbsp;<font color=red>**</font> </td>
-            <td><select name="active">
-                <option value="1" <?php if ($products_status ==1) echo 'selected="selected"';?>>Online</option>
-                <option value="2" <?php if ($products_status ==2) echo 'selected="selected"';?>>Thai</option>
-                <option value="3" <?php if ($products_status ==3) echo 'selected="selected"';?>>Eng</option>
-                <option value="4" <?php if ($products_status ==4) echo 'selected="selected"';?>>Offline</option>
-              </select></td>
-          </tr>
-          <tr>
-            <td height="26" class="td_desc"><?=$arr_product_fieldname[45] ?>
-              : &nbsp; <font color=red>**</font></td>
-            <td><select name="promote">
-                <option value="1" <?php if ($products_promote ==1) echo 'selected="selected"';?>>Online</option>
-                <option value="2" <?php if ($products_promote ==2) echo 'selected="selected"';?>>Thai</option>
-                <option value="3" <?php if ($products_promote ==3) echo 'selected="selected"';?>>Eng</option>
-                <option value="4" <?php if ($products_promote ==4) echo 'selected="selected"';?>>Offline</option>
-              </select></td>
-          </tr>
-          <tr>
-            <td height="26" class="td_desc">&nbsp;</td>
-            <td><input type="button"  value="    OK    " onMouseOver="onBtnOver(this,'<?=$theme_tab1?>')";  onMouseOut="onBtnOut(this)" onclick="javascript:checkvalues();">
-              &nbsp;
-              <input name="reset" type="reset" id="reset" value="  Reset  " onMouseOver="onBtnOver(this,'<?=$theme_tab1?>')";  onMouseOut="onBtnOut(this)">
-            </td>
-          </tr>
-          <tr>
+    
+    
+    </table>
+    
+  </div>
+  </form>
+  <div id="tabs-3">
+       <p>C</p>
+           <br />  
+            
+           <!-- Test price -->
+           <div id="tab-special">
+          <?php include ("productsprice-form.php")?>
+           </div>
+          <div id="responsecontainer"></div>
+          
+       
+        
+    
+    
+  </div>
+  <div id="tabs-4">
+  
+    <p>D</p>
+           <?php include ("discount-products-form.html.php")?>
+           <div id="discountcontainer"></div>
+    
+    
+  </div>
+</div>
+  <tr>
             <td height="25" colspan="2"><font size="-2" face="MS Sans Serif, Tahoma, sans-serif"><strong>&nbsp;&nbsp;Link 
               Action &gt; <a href="index.php?method=products&process=list">List Products</a> <a href="index.php?method=products&process=bdetail&products_id=<?=$products_id?>">Detail Products</a></strong></font></td>
           </tr>
           <tr>
-            <td height="10">&nbsp;</td>
-            <td>&nbsp;</td>
-          </tr>
-        </table></td>
-    </tr>
-  </table>
-</form>
+
 <?
 }
 function bmodify()
