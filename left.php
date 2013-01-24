@@ -253,10 +253,10 @@ function Recall2($id){
 												$products_id=$cart['products_id'];
                                                 $price = getPrice($products_id);
 												//$price=$cart['price'];
-                                                echo "<p>price =</p>".$price;
+                                                
                                                 $discountprice = getDiscountPrice($products_id);
 												//$discountprice=$cart['discountprice'];
-                                                echo "<p>Discount =</p>".$discountprice;
+                                                
 												$amount=$cart['amount'];				
 												
 												$detail_sql = sql_Select(1, $prefix."_products", "products_id = '$products_id'", 0);

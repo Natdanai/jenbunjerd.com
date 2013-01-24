@@ -187,7 +187,7 @@ $(document).ready(function(){
             //$list_sql = "SELECT *  FROM ".$prefix."_products WHERE `products_id` IN ( SELECT DISTINCT products_id FROM ".$prefix."_productdiscount)";
             //$list_sql .= " WHERE ( ( date_start='0000-00-00' OR date_start < NOW() ) AND ( date_end='000-00-00' OR date_end > NOW() ) )";
             $list_sql = "SELECT * FROM jenbunjerd_products WHERE `products_id` IN ( SELECT DISTINCT products_id FROM jenbunjerd_productdiscount WHERE ( ( date_start='0000-00-00' OR date_start < NOW() ) AND ( date_end='000-00-00' OR date_end > NOW() ) ) ORDER BY date_start DESC )";
-            //echo($list_sql);
+            
             //$list_query = "SELECT * FROM jenbunjerd_products WHERE (products_promotion = 1 AND products_discountprice > 0) AND products_status =1 AND products_promote = 1 AND ((promotion_start_date = '0000-00-00' OR promotion_start_date < NOW()) AND (promotion_end_date = '0000-00-00' OR promotion_end_date > NOW()))";
             $list_query = $db->sql_query($list_sql);
             if(!$list_query){
@@ -208,7 +208,9 @@ $(document).ready(function(){
 			$startpage = $c_page*$per_page - $per_page;
 
 			//$list_sql .= " ORDER BY products_model ,products_jb_no ASC LIMIT $startpage, $per_page";   //echo "<BR>$list_sql<br>";
-			$list_sql .= " ORDER BY products_jb_no ASC LIMIT $startpage, $per_page"; 
+			$list_sql .= " AND products_delete =0";
+            //echo($list_sql);
+            $list_sql .= " ORDER BY products_jb_no ASC LIMIT $startpage, $per_page"; 
             $list_query = $db->sql_query($list_sql);									//echo "<br>$list_guery";
 			$haverow = $db->sql_numrows($list_query);								//echo "<br>$totalrec<br>";
 			
@@ -252,7 +254,7 @@ $(document).ready(function(){
 			$products_rollers=stripslashes($result['products_rollers']);
 			$products_material=stripslashes($result['products_material']);
 			$products_qtypack=stripslashes($result['products_qtypack']);
-            $products_id;
+			
             $products_price = getPrice($products_id);
             $products_discountprice = getDiscountPrice($products_id);
             //$products_price=stripslashes($result['products_price']);
@@ -324,7 +326,6 @@ $(document).ready(function(){
 					  </center></td>
 				  <td valign="top">
 				  <table width="90%" border="0" align="center" cellpadding="1" cellspacing="1">
-				  	
 					  <tr>
 						<td width="30%"><strong><span class="fgray">Description</span></strong></td>
 						<td width="70%"><span class="fgray"><?=$products_name?></span></td>
